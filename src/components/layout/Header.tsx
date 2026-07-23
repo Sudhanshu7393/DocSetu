@@ -135,8 +135,8 @@ export default function Header() {
                   className={cn(
                     "px-4 py-2 rounded-xl text-sm font-medium transition-all",
                     pathname === href || pathname.startsWith(href + "/")
-                      ? "text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/50 font-semibold shadow-xs"
-                      : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100/80 dark:hover:bg-slate-800/80"
+                      ? "text-emerald-700 dark:text-emerald-400 bg-emerald-100/70 dark:bg-emerald-950/60 font-semibold shadow-xs"
+                      : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-50/50 dark:hover:bg-slate-800/80"
                   )}
                 >
                   {label}
@@ -149,7 +149,7 @@ export default function Header() {
               {/* Search button */}
               <button
                 onClick={() => setSearchOpen(!searchOpen)}
-                className="p-2 rounded-xl text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                className="p-2 rounded-xl text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-emerald-50 dark:hover:bg-slate-800 transition-colors"
                 aria-label="Search"
               >
                 <Search size={18} />
@@ -162,7 +162,7 @@ export default function Header() {
                   "flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all duration-300 shadow-sm",
                   dark
                     ? "bg-slate-800/90 border-amber-500/40 text-amber-300 hover:bg-slate-800 hover:border-amber-400"
-                    : "bg-indigo-50/90 border-indigo-200 text-indigo-700 hover:bg-indigo-100 hover:border-indigo-300"
+                    : "bg-emerald-50/90 border-emerald-200 text-emerald-700 hover:bg-emerald-100 hover:border-emerald-300"
                 )}
                 title={dark ? "Switch to Light Theme" : "Switch to Dark Theme"}
                 aria-label="Toggle theme"
@@ -174,7 +174,7 @@ export default function Header() {
                   </>
                 ) : (
                   <>
-                    <Moon size={14} className="text-indigo-600 fill-indigo-600/20" />
+                    <Moon size={14} className="text-emerald-700 fill-emerald-700/20" />
                     <span className="text-xs font-semibold tracking-wide">Light</span>
                   </>
                 )}
@@ -186,7 +186,7 @@ export default function Header() {
                     onClick={() => setUserOpen(!userOpen)}
                     className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
                   >
-                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center text-white text-xs font-bold">
+                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white text-xs font-bold">
                       U
                     </div>
                     <ChevronDown size={14} className="text-slate-500" />
@@ -222,7 +222,7 @@ export default function Header() {
                   </Link>
                   <Link
                     href="/register"
-                    className="px-4.5 py-2 text-sm font-semibold bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white rounded-xl transition-all shadow-md shadow-indigo-500/20 hover:shadow-indigo-500/35 hover:-translate-y-0.5"
+                    className="px-4.5 py-2 text-sm font-semibold bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white rounded-xl transition-all shadow-md shadow-emerald-600/20 hover:shadow-emerald-600/35 hover:-translate-y-0.5"
                   >
                     Get Started Free
                   </Link>

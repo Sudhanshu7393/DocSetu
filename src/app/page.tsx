@@ -191,10 +191,10 @@ export default function HomePage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             {/* Badge */}
-            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-indigo-50/90 dark:bg-indigo-950/60 border border-indigo-200/90 dark:border-indigo-800/60 text-indigo-700 dark:text-indigo-300 text-xs sm:text-sm font-semibold mb-5 sm:mb-8 max-w-full shadow-xs">
-              <Sparkles size={14} className="flex-shrink-0 text-indigo-600 dark:text-indigo-400" />
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-emerald-50/90 dark:bg-emerald-950/60 border border-emerald-200/90 dark:border-emerald-800/60 text-emerald-800 dark:text-emerald-300 text-xs sm:text-sm font-semibold mb-5 sm:mb-8 max-w-full shadow-xs">
+              <Sparkles size={14} className="flex-shrink-0 text-emerald-600 dark:text-emerald-400" />
               <span className="truncate">India&apos;s Guided Document Creation Platform</span>
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse flex-shrink-0" />
+              <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse flex-shrink-0" />
             </div>
 
             {/* Headline */}
@@ -213,7 +213,7 @@ export default function HomePage() {
 
             {/* Search */}
             <div className="relative max-w-xl mx-auto mb-3 sm:mb-4 px-1 sm:px-0">
-              <div className="flex items-center gap-1.5 sm:gap-2 bg-white dark:bg-slate-800/95 rounded-xl sm:rounded-2xl border border-slate-200 dark:border-slate-700/80 p-1.5 sm:p-2 shadow-xl shadow-indigo-500/5 dark:shadow-black/40 focus-within:border-indigo-500 transition-all">
+              <div className="flex items-center gap-1.5 sm:gap-2 bg-white dark:bg-slate-800/95 rounded-xl sm:rounded-2xl border border-emerald-200 dark:border-emerald-800/80 p-1.5 sm:p-2 shadow-xl shadow-emerald-600/10 dark:shadow-black/40 focus-within:border-emerald-500 transition-all">
                 <Search className="ml-2.5 text-slate-400 flex-shrink-0" size={18} />
                 <input
                   type="text"
@@ -224,7 +224,7 @@ export default function HomePage() {
                 />
                 <Link
                   href={`/search?q=${searchQuery}`}
-                  className="px-4 sm:px-6 py-2 sm:py-2.5 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white rounded-lg sm:rounded-xl text-xs sm:text-sm font-semibold transition-all flex-shrink-0 shadow-sm"
+                  className="px-4 sm:px-6 py-2 sm:py-2.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white rounded-lg sm:rounded-xl text-xs sm:text-sm font-semibold transition-all flex-shrink-0 shadow-sm"
                 >
                   Search
                 </Link>
@@ -238,7 +238,7 @@ export default function HomePage() {
                 <Link
                   key={doc}
                   href={`/search?q=${doc}`}
-                  className="px-2.5 sm:px-3.5 py-1 rounded-full text-[11px] sm:text-xs font-semibold bg-slate-100 dark:bg-slate-800/90 text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/50 hover:text-indigo-600 dark:hover:text-indigo-300 border border-slate-200/80 dark:border-slate-700/80 transition-colors"
+                  className="px-2.5 sm:px-3.5 py-1 rounded-full text-[11px] sm:text-xs font-semibold bg-emerald-50/80 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 border border-emerald-200/80 dark:border-emerald-800/80 transition-colors"
                 >
                   {doc}
                 </Link>
@@ -249,14 +249,14 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 max-w-xs sm:max-w-none mx-auto">
               <Link
                 href="/categories"
-                className="group inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-indigo-600 via-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white text-sm sm:text-base font-bold rounded-xl sm:rounded-2xl transition-all duration-300 shadow-lg shadow-indigo-600/25 hover:shadow-indigo-600/40 hover:-translate-y-0.5"
+                className="group inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 hover:from-emerald-700 hover:to-teal-800 text-white text-sm sm:text-base font-bold rounded-xl sm:rounded-2xl transition-all duration-300 shadow-lg shadow-emerald-600/25 hover:shadow-emerald-600/40 hover:-translate-y-0.5"
               >
                 Browse All Documents
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 href="#how-it-works"
-                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 text-slate-700 dark:text-slate-200 text-sm sm:text-base font-semibold rounded-xl sm:rounded-2xl border border-slate-200 dark:border-slate-700 hover:bg-slate-100/80 dark:hover:bg-slate-800 transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 text-slate-700 dark:text-slate-200 text-sm sm:text-base font-semibold rounded-xl sm:rounded-2xl border border-emerald-200 dark:border-emerald-800 hover:bg-emerald-50/50 dark:hover:bg-slate-800 transition-colors"
               >
                 How It Works
               </Link>
@@ -270,7 +270,7 @@ export default function HomePage() {
                 { icon: FileCheck, text: "Submission guidance included" },
               ].map(({ icon: Icon, text }) => (
                 <div key={text} className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400">
-                  <Icon size={15} className="text-emerald-500 flex-shrink-0" />
+                  <Icon size={15} className="text-amber-500 flex-shrink-0" />
                   <span>{text}</span>
                 </div>
               ))}
@@ -283,7 +283,7 @@ export default function HomePage() {
       <MarqueeTicker />
 
       {/* ─── STATS ─── */}
-      <section className="bg-gradient-to-r from-indigo-700 via-indigo-600 to-violet-700 dark:from-indigo-900 dark:to-slate-900 text-white">
+      <section className="bg-gradient-to-r from-teal-800 via-emerald-800 to-emerald-900 dark:from-emerald-950 dark:to-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map(({ value, label, icon: Icon }) => (
@@ -302,7 +302,7 @@ export default function HomePage() {
       <section className="py-20 bg-white dark:bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <span className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">
+            <span className="text-sm font-semibold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider">
               Browse by Category
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-2 mb-4">
@@ -336,7 +336,7 @@ export default function HomePage() {
           <div className="text-center mt-8">
             <Link
               href="/categories"
-              className="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-semibold text-sm hover:gap-3 transition-all"
+              className="inline-flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-semibold text-sm hover:gap-3 transition-all"
             >
               View all categories <ArrowRight size={15} />
             </Link>
@@ -347,11 +347,11 @@ export default function HomePage() {
       {/* ─── HOW IT WORKS ─── */}
       <section
         id="how-it-works"
-        className="py-20 bg-gradient-to-b from-slate-50 to-white dark:from-slate-800/30 dark:to-slate-900"
+        className="py-20 bg-gradient-to-b from-emerald-50/30 to-white dark:from-emerald-950/20 dark:to-slate-900"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">
+            <span className="text-sm font-semibold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider">
               Simple Process
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-2 mb-4">
@@ -364,7 +364,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
             {/* Connector line (desktop only) */}
-            <div className="hidden md:block absolute top-16 left-1/3 right-1/3 h-px bg-gradient-to-r from-indigo-300 to-violet-300 dark:from-indigo-700 dark:to-violet-700 z-0" />
+            <div className="hidden md:block absolute top-16 left-1/3 right-1/3 h-px bg-gradient-to-r from-emerald-300 to-teal-300 dark:from-emerald-700 dark:to-teal-700 z-0" />
 
             {howItWorks.map((step, i) => (
               <div key={i} className="relative z-10 text-center">
@@ -393,7 +393,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-12">
             <div>
-              <span className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">
+              <span className="text-sm font-semibold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider">
                 Most Used
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-2">
@@ -402,7 +402,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/categories"
-              className="hidden sm:inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:gap-3 transition-all"
+              className="hidden sm:inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 dark:text-emerald-400 hover:gap-3 transition-all"
             >
               View all <ArrowRight size={15} />
             </Link>
@@ -415,7 +415,7 @@ export default function HomePage() {
                 <Link
                   key={doc.id}
                   href={`/documents/${doc.slug}`}
-                  className="group p-6 rounded-2xl border border-slate-200 dark:border-slate-700/50 bg-white dark:bg-slate-800/50 hover:border-indigo-300 dark:hover:border-indigo-600/50 transition-all duration-300 card-glow hover:-translate-y-0.5"
+                  className="group p-6 rounded-2xl border border-slate-200 dark:border-slate-700/50 bg-white dark:bg-slate-800/50 hover:border-emerald-300 dark:hover:border-emerald-600/50 transition-all duration-300 card-glow hover:-translate-y-0.5"
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div className={`text-2xl p-2.5 rounded-xl ${category?.bgColor}`}>
@@ -431,7 +431,7 @@ export default function HomePage() {
                       {!doc.isPremium && <span className="badge-free">Free</span>}
                     </div>
                   </div>
-                  <h3 className="font-semibold text-slate-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                  <h3 className="font-semibold text-slate-900 dark:text-white mb-2 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
                     {doc.name}
                   </h3>
                   <p className="text-sm text-slate-500 dark:text-slate-400 line-clamp-2 mb-4">
@@ -442,7 +442,7 @@ export default function HomePage() {
                       <Clock size={12} />
                       {doc.estimatedTime}
                     </div>
-                    <span className="text-xs font-medium text-indigo-600 dark:text-indigo-400 flex items-center gap-1 group-hover:gap-2 transition-all">
+                    <span className="text-xs font-medium text-emerald-700 dark:text-emerald-400 flex items-center gap-1 group-hover:gap-2 transition-all">
                       Create <ArrowRight size={11} />
                     </span>
                   </div>
@@ -457,7 +457,7 @@ export default function HomePage() {
       <section className="py-20 bg-slate-50 dark:bg-slate-800/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <span className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">
+            <span className="text-sm font-semibold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider">
               Why DocSetu
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-2 mb-4">
@@ -471,8 +471,8 @@ export default function HomePage() {
                 key={title}
                 className="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/50 shadow-sm hover:shadow-md transition-shadow"
               >
-                <div className="w-11 h-11 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 flex items-center justify-center mb-4">
-                  <Icon size={20} className="text-indigo-600 dark:text-indigo-400" />
+                <div className="w-11 h-11 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 flex items-center justify-center mb-4">
+                  <Icon size={20} className="text-emerald-700 dark:text-emerald-400" />
                 </div>
                 <h3 className="font-semibold text-slate-900 dark:text-white mb-2">{title}</h3>
                 <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
@@ -487,7 +487,7 @@ export default function HomePage() {
       {/* ─── PLATFORM HIGHLIGHTS ─── */}
       <section className="py-20 bg-white dark:bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">
+          <span className="text-sm font-semibold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider">
             Features & Quality
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-2 mb-12">
@@ -514,9 +514,9 @@ export default function HomePage() {
             ].map((f, i) => (
               <div
                 key={i}
-                className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/50 hover:border-indigo-300 dark:hover:border-indigo-600/50 transition-colors"
+                className="p-6 rounded-2xl bg-emerald-50/40 dark:bg-slate-800/40 border border-emerald-100 dark:border-slate-700/50 hover:border-emerald-300 dark:hover:border-emerald-600/50 transition-colors"
               >
-                <div className="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-950/60 flex items-center justify-center text-indigo-600 dark:text-indigo-400 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-950/60 flex items-center justify-center text-emerald-700 dark:text-emerald-400 mb-4">
                   <f.icon size={20} />
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{f.title}</h3>
@@ -528,7 +528,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── CTA BANNER ─── */}
-      <section className="py-20 bg-gradient-to-r from-indigo-700 via-indigo-600 to-violet-700 relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-r from-emerald-800 via-teal-800 to-emerald-900 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-20" />
         <div className="absolute top-0 right-0 w-80 h-80 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4" />
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4" />
@@ -543,14 +543,14 @@ export default function HomePage() {
             <br />
             First Document?
           </h2>
-          <p className="text-xl text-indigo-100 mb-10 max-w-xl mx-auto">
+          <p className="text-xl text-emerald-100 mb-10 max-w-xl mx-auto">
             Sign up free and create your first document in under 5 minutes.
             No credit card required.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/register"
-              className="inline-flex items-center gap-2.5 px-8 py-4 bg-white text-indigo-700 font-bold rounded-2xl hover:bg-indigo-50 transition-colors shadow-lg"
+              className="inline-flex items-center gap-2.5 px-8 py-4 bg-white text-emerald-900 font-bold rounded-2xl hover:bg-emerald-50 transition-colors shadow-lg"
             >
               Start for Free <ArrowRight size={18} />
             </Link>

@@ -52,15 +52,15 @@ export default function Footer() {
 
             <div className="mt-6 space-y-2.5">
               <div className="flex items-center gap-2.5 text-sm text-slate-400">
-                <Mail size={14} className="text-indigo-400" />
+                <Mail size={14} className="text-emerald-400" />
                 <span>support@docsetu.in</span>
               </div>
               <div className="flex items-center gap-2.5 text-sm text-slate-400">
-                <Phone size={14} className="text-indigo-400" />
+                <Phone size={14} className="text-emerald-400" />
                 <span>+91 73930 11350</span>
               </div>
               <div className="flex items-center gap-2.5 text-sm text-slate-400">
-                <MapPin size={14} className="text-indigo-400" />
+                <MapPin size={14} className="text-emerald-400" />
                 <span>India</span>
               </div>
             </div>
