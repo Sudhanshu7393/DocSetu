@@ -1,0 +1,193 @@
+// prisma/schema.prisma
+// Run: npx prisma db push  (after setting DATABASE_URL in .env)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id            String   @id @default(cuid())
+  name          String?
+  email         String   @unique
+  emailVerified DateTime?
+  phone         String?
+  image         String?
+  password      String?
+  plan          Plan     @default(FREE)
+  role          Role     @default(USER)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  documents  GeneratedDocument[]
+  drafts     Draft[]
+  accounts   Account[]
+  sessions   Session[]
+  feedback   Feedback[]
+
+  @@map("users")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verification_tokens")
+}
+
+model Category {
+  id          String  @id @default(cuid())
+  slug        String  @unique
+  name        String
+  nameHi      String
+  description String
+  icon        String
+  color       String
+  bgColor     String
+  order       Int     @default(0)
+  isActive    Boolean @default(true)
+  featured    Boolean @default(false)
+
+  documents Document[]
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  @@map("categories")
+}
+
+model Document {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  categoryId  String
+  name        String
+  nameHi      String
+  description String
+  isPremium   Boolean  @default(false)
+  isPopular   Boolean  @default(false)
+  isNew       Boolean  @default(false)
+  isActive    Boolean  @default(true)
+  version     Int      @default(1)
+  formSchema  Json     // FormStep[] stored as JSON
+  guidance    Json     // SubmissionGuidance stored as JSON
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  category          Category            @relation(fields: [categoryId], references: [id])
+  generatedDocuments GeneratedDocument[]
+  drafts            Draft[]
+  feedback          Feedback[]
+
+  @@map("documents")
+}
+
+model GeneratedDocument {
+  id           String   @id @default(cuid())
+  userId       String
+  documentId   String
+  templateSlug String
+  formData     Json
+  status       DocStatus @default(COMPLETE)
+  downloadCount Int      @default(0)
+  sharedToken  String?   @unique
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  document Document @relation(fields: [documentId], references: [id])
+
+  @@map("generated_documents")
+}
+
+model Draft {
+  id           String   @id @default(cuid())
+  userId       String
+  documentId   String
+  templateSlug String
+  formData     Json
+  currentStep  Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  document Document @relation(fields: [documentId], references: [id])
+
+  @@map("drafts")
+}
+
+model Feedback {
+  id         String   @id @default(cuid())
+  userId     String?
+  documentId String
+  rating     Int      // 1–5
+  comment    String?
+  createdAt  DateTime @default(now())
+
+  user     User?    @relation(fields: [userId], references: [id])
+  document Document @relation(fields: [documentId], references: [id])
+
+  @@map("feedback")
+}
+
+model AdminLog {
+  id        String   @id @default(cuid())
+  adminId   String
+  action    String
+  target    String?
+  details   Json?
+  createdAt DateTime @default(now())
+
+  @@map("admin_logs")
+}
+
+enum Plan {
+  FREE
+  PREMIUM
+  BUSINESS
+}
+
+enum Role {
+  USER
+  ADMIN
+  SUPER_ADMIN
+}
+
+enum DocStatus {
+  COMPLETE
+  ARCHIVED
+}
