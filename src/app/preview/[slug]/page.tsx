@@ -16,10 +16,43 @@ import {
   Users,
   Shield,
   Loader2,
+  ExternalLink,
 } from "lucide-react";
 import { getDocumentBySlug } from "@/data/documents";
 import { getCategoryBySlug } from "@/data/categories";
 import { formatDate } from "@/lib/utils";
+
+function renderEStampHeader(formData: Record<string, string>, docName: string): string {
+  const stampNo = formData["e_stamp_number"] || formData["stamp_number"];
+  const stampState = formData["stamp_state"] || "DELHI (NCT)";
+  const stampDuty = formData["stamp_duty_amount"] || "100";
+  const certDate = formData["e_stamp_date"] || formatDate(new Date());
+
+  if (stampNo) {
+    return `
+<div style="border: 2px double #1e3a8a; padding: 14px 18px; margin-bottom: 24px; background-color: #f8fafc; border-radius: 6px; font-family: sans-serif;">
+  <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #1e3a8a; padding-bottom: 8px; margin-bottom: 10px;">
+    <div>
+      <span style="font-size: 12px; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px;">GOVERNMENT OF INDIA / OFFICIAL e-STAMP CERTIFICATE</span>
+      <p style="font-size: 10px; color: #475569; margin: 2px 0 0 0;">Issued by Stock Holding Corporation of India Limited (SHCIL) & Govt of ${stampState}</p>
+    </div>
+    <div style="text-align: right; background: #dcfce7; border: 1px solid #16a34a; padding: 4px 8px; border-radius: 4px;">
+      <span style="font-size: 10px; font-weight: bold; color: #15803d; text-transform: uppercase;">✔ VERIFIED e-STAMP</span>
+    </div>
+  </div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 11px; color: #1e293b; line-height: 1.5;">
+    <div><strong>Certificate No:</strong> <span style="font-family: monospace; font-size: 12px; color: #1e3a8a; font-weight: bold;">${stampNo}</span></div>
+    <div><strong>Certificate Issued Date:</strong> ${certDate}</div>
+    <div><strong>Stamp Duty Amount:</strong> ₹${stampDuty}/-</div>
+    <div><strong>Document Type:</strong> ${docName}</div>
+  </div>
+  <div style="margin-top: 8px; padding-top: 6px; border-top: 1px dashed #cbd5e1; font-size: 9.5px; color: #64748b; text-align: center;">
+    To verify certificate authenticity online, visit <strong>https://www.shcilestamp.com</strong> or scan QR code on official e-Stamp paper.
+  </div>
+</div>`;
+  }
+  return "";
+}
 
 // ─── Document Renderer ────────────────────────────────────────
 function renderDocumentContent(
@@ -35,6 +68,8 @@ function renderDocumentContent(
     case "rent-agreement":
       return `
 <div class="doc-preview" style="font-family:'Times New Roman',serif;font-size:13px;line-height:2;color:#111;max-width:700px;margin:0 auto;padding:24px;">
+
+${renderEStampHeader(formData, "Rent Agreement")}
 
 <div style="text-align:center;margin-bottom:28px;">
   <h1 style="font-size:22px;font-weight:bold;text-transform:uppercase;letter-spacing:2px;margin-bottom:4px;">RENT AGREEMENT</h1>
@@ -589,15 +624,41 @@ export default function PreviewPage() {
               </h3>
 
               {doc.stampRequired && (
-                <div className="flex items-start gap-2.5 p-3 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-100 dark:border-amber-900/30 mb-2.5">
-                  <Stamp size={14} className="text-amber-600 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="text-xs font-semibold text-amber-700 dark:text-amber-400">
-                      Stamp Paper Required
+                <div className="space-y-2.5 mb-2.5">
+                  <div className="flex items-start gap-2.5 p-3 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-100 dark:border-amber-900/30">
+                    <Stamp size={14} className="text-amber-600 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="text-xs font-semibold text-amber-700 dark:text-amber-400">
+                        Stamp Paper / e-Stamp Required
+                      </p>
+                      <p className="text-xs text-amber-600 dark:text-amber-500 mt-0.5">
+                        Buy non-judicial e-Stamp paper online or from stamp vendor
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="p-3 rounded-xl bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800/50 space-y-2">
+                    <p className="text-[11px] font-bold text-blue-800 dark:text-blue-300 uppercase tracking-wider">
+                      🌐 100% Online e-Stamping Portal
                     </p>
-                    <p className="text-xs text-amber-600 dark:text-amber-500 mt-0.5">
-                      Print on appropriate stamp paper
-                    </p>
+                    <a
+                      href="https://www.shcilestamp.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-between px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-semibold transition-colors shadow-sm"
+                    >
+                      <span>Buy e-Stamp Online</span>
+                      <ExternalLink size={12} />
+                    </a>
+                    <a
+                      href="https://www.shcilestamp.com/estamp_verify.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-between px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 rounded-lg text-xs font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+                    >
+                      <span>Verify Certificate</span>
+                      <ExternalLink size={12} />
+                    </a>
                   </div>
                 </div>
               )}
