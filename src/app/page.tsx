@@ -39,7 +39,7 @@ const howItWorks = [
     description:
       "Browse our library of expert-reviewed document templates. Find exactly what you need from 9 categories.",
     icon: Search,
-    color: "from-blue-500 to-blue-600",
+    color: "from-indigo-500 to-indigo-600",
   },
   {
     step: "02",
@@ -47,7 +47,7 @@ const howItWorks = [
     description:
       "Our guided wizard asks you plain-language questions. No legal jargon. No confusing forms.",
     icon: FileText,
-    color: "from-indigo-500 to-indigo-600",
+    color: "from-violet-500 to-violet-600",
   },
   {
     step: "03",
@@ -55,7 +55,7 @@ const howItWorks = [
     description:
       "Get a professionally formatted PDF and Word document in seconds. Plus submission guidance.",
     icon: Download,
-    color: "from-violet-500 to-violet-600",
+    color: "from-purple-500 to-purple-600",
   },
 ];
 
@@ -113,12 +113,12 @@ function CategoryCard({ cat }: { cat: Category }) {
   return (
     <Link
       href={`/categories/${cat.slug}`}
-      className="group relative p-4 sm:p-6 rounded-2xl border border-slate-200 dark:border-slate-700/50 bg-white dark:bg-slate-800/50 hover:border-blue-300 dark:hover:border-blue-600/50 transition-all duration-300 card-glow hover:-translate-y-0.5"
+      className="group relative p-4 sm:p-6 rounded-2xl border border-slate-200 dark:border-slate-700/50 bg-white dark:bg-slate-800/50 hover:border-indigo-300 dark:hover:border-indigo-600/50 transition-all duration-300 card-glow hover:-translate-y-0.5"
     >
       <div className={`inline-flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-xl ${cat.bgColor} mb-3 sm:mb-4 text-xl sm:text-2xl`}>
         {cat.icon}
       </div>
-      <h3 className="font-semibold text-slate-900 dark:text-white mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors text-sm sm:text-base">
+      <h3 className="font-semibold text-slate-900 dark:text-white mb-1 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors text-sm sm:text-base">
         {cat.name}
       </h3>
       <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-2 mb-3">
@@ -130,7 +130,7 @@ function CategoryCard({ cat }: { cat: Category }) {
         </span>
         <ChevronRight
           size={14}
-          className="text-slate-400 group-hover:text-blue-500 group-hover:translate-x-0.5 transition-all"
+          className="text-slate-400 group-hover:text-indigo-500 group-hover:translate-x-0.5 transition-all"
         />
       </div>
     </Link>
@@ -161,7 +161,7 @@ function MarqueeTicker() {
             key={i}
             className="flex items-center gap-3 mx-4 sm:mx-6 text-xs sm:text-sm font-semibold tracking-wide text-slate-300 hover:text-white transition-colors"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse flex-shrink-0" />
+            <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse flex-shrink-0" />
             <span>{item}</span>
           </div>
         ))}
@@ -182,7 +182,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-radial-primary pointer-events-none" />
 
         {/* Floating background blur elements */}
-        <div className="hidden sm:block absolute top-1/4 right-1/4 w-64 h-64 bg-blue-400/10 dark:bg-blue-600/10 rounded-full blur-3xl float-animation" />
+        <div className="hidden sm:block absolute top-1/4 right-1/4 w-64 h-64 bg-indigo-400/10 dark:bg-indigo-600/10 rounded-full blur-3xl float-animation" />
         <div
           className="hidden sm:block absolute bottom-1/3 left-1/3 w-80 h-80 bg-indigo-400/10 dark:bg-indigo-600/10 rounded-full blur-3xl float-animation"
           style={{ animationDelay: "2s" }}
@@ -302,7 +302,7 @@ export default function HomePage() {
       <section className="py-20 bg-white dark:bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <span className="text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
+            <span className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">
               Browse by Category
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-2 mb-4">
