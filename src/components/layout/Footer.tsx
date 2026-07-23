@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { FileText, ExternalLink, Mail, Phone, MapPin } from "lucide-react";
+import { ExternalLink, Mail, Phone, MapPin } from "lucide-react";
 
 
 const footerLinks = {
@@ -35,18 +36,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2.5 mb-4">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
-                <FileText size={18} className="text-white" />
-              </div>
-              <div>
-                <p className="font-bold text-xl text-white">
-                  Doc<span className="text-blue-400">Setu</span>
-                </p>
-                <p className="text-[10px] text-slate-500 uppercase tracking-wider">
-                  Making Official Documents Easy
-                </p>
-              </div>
+            <Link href="/" className="inline-block mb-4">
+              <Image
+                src="/logo.jpg"
+                alt="DocSetu"
+                width={160}
+                height={48}
+                className="h-10 sm:h-12 w-auto object-contain rounded-xl bg-white/5 p-1 border border-white/10"
+              />
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed max-w-xs">
               India&apos;s trusted guided document creation platform. Answer simple

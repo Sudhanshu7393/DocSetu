@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   LayoutDashboard,
   FolderOpen,
@@ -36,16 +37,14 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       <aside className="w-64 flex-shrink-0 bg-slate-900 border-r border-slate-800 flex flex-col fixed h-full z-40">
         {/* Logo */}
         <div className="p-5 border-b border-slate-800">
-          <Link href="/admin" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
-              <Shield size={15} className="text-white" />
-            </div>
-            <div>
-              <p className="font-bold text-white text-sm">
-                Doc<span className="text-blue-400">Setu</span>
-              </p>
-              <p className="text-[10px] text-slate-500 uppercase tracking-wider">Admin Panel</p>
-            </div>
+          <Link href="/admin" className="block">
+            <Image
+              src="/logo.jpg"
+              alt="DocSetu Admin"
+              width={140}
+              height={40}
+              className="h-8 w-auto object-contain rounded-lg bg-white/5 p-1"
+            />
           </Link>
         </div>
 

@@ -1,7 +1,8 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { Eye, EyeOff, FileText, ArrowRight, Globe, CheckCircle } from "lucide-react";
+import Image from "next/image";
+import { Eye, EyeOff, ArrowRight, Globe, CheckCircle } from "lucide-react";
 
 export default function RegisterPage() {
   const [showPass, setShowPass] = useState(false);
@@ -27,13 +28,15 @@ export default function RegisterPage() {
 
       <div className="relative w-full max-w-lg">
         <div className="text-center mb-8">
-          <Link href="/" className="inline-flex items-center gap-2.5 mb-6">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
-              <FileText size={20} className="text-white" />
-            </div>
-            <span className="text-2xl font-bold text-white">
-              Doc<span className="text-blue-400">Setu</span>
-            </span>
+          <Link href="/" className="inline-block mb-6">
+            <Image
+              src="/logo.jpg"
+              alt="DocSetu"
+              width={180}
+              height={56}
+              className="h-12 w-auto object-contain mx-auto rounded-xl bg-white/10 p-1 border border-white/20"
+              priority
+            />
           </Link>
           <h1 className="text-2xl font-bold text-white mb-1">Create your free account</h1>
           <p className="text-slate-400 text-sm">Join 50,000+ Indians creating documents on DocSetu</p>

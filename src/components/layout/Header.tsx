@@ -1,4 +1,6 @@
 "use client";
+import Image from "next/image";
+
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
@@ -112,15 +114,15 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2.5 flex-shrink-0">
-              <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-sm">
-                <FileText size={16} className="text-white" />
-              </div>
-              <div>
-                <span className="text-lg font-bold text-slate-900 dark:text-white">
-                  Doc<span className="text-blue-600 dark:text-blue-400">Setu</span>
-                </span>
-              </div>
+            <Link href="/" className="flex items-center gap-2 flex-shrink-0">
+              <Image
+                src="/logo.jpg"
+                alt="DocSetu"
+                width={140}
+                height={40}
+                className="h-8 sm:h-9 w-auto object-contain rounded-lg shadow-sm"
+                priority
+              />
             </Link>
 
             {/* Desktop nav */}
