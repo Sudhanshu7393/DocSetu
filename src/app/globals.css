@@ -345,3 +345,28 @@ h1, h2, h3, h4, h5, h6 {
   background-size: 200% 100%;
   animation: shimmer 3s linear infinite;
 }
+
+/* Print optimization rules */
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+  #printable-document, #printable-document * {
+    visibility: visible !important;
+  }
+  #printable-document {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+  header, footer, nav, button, .no-print {
+    display: none !important;
+  }
+}
