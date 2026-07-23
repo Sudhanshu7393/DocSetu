@@ -39,7 +39,7 @@ export default function RegisterPage() {
             />
           </Link>
           <h1 className="text-2xl font-bold text-white mb-1">Create your free account</h1>
-          <p className="text-slate-400 text-sm">Join 50,000+ Indians creating documents on DocSetu</p>
+          <p className="text-slate-400 text-sm">Start creating official documents easily with DocSetu</p>
         </div>
 
         <div className="bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 p-8 shadow-2xl">

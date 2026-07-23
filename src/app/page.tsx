@@ -26,10 +26,10 @@ import { Category } from "@/types";
 const popularDocs = getPopularDocuments(6);
 
 const stats = [
-  { value: "50,000+", label: "Documents Created", icon: FileText },
-  { value: "25+", label: "Document Types", icon: FileCheck },
-  { value: "4.9/5", label: "User Rating", icon: Star },
-  { value: "99.9%", label: "Uptime", icon: Zap },
+  { value: "14+", label: "Official Templates", icon: FileText },
+  { value: "9", label: "Document Categories", icon: FileCheck },
+  { value: "100%", label: "Guided Questionnaires", icon: Shield },
+  { value: "Instant", label: "PDF & DOCX Exports", icon: Download },
 ];
 
 const howItWorks = [
@@ -449,41 +449,43 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── TESTIMONIALS ─── */}
+      {/* ─── PLATFORM HIGHLIGHTS ─── */}
       <section className="py-20 bg-white dark:bg-slate-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <span className="text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
-              Testimonials
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-2">
-              Trusted by Thousands
-            </h2>
-          </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <span className="text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
+            Features & Quality
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-2 mb-12">
+            Why Individuals & Businesses Trust DocSetu
+          </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((t, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+            {[
+              {
+                title: "No Plain Templates",
+                desc: "Instead of downloading empty Word files, answer simple questions. Our engine formats the document automatically.",
+                icon: FileCheck,
+              },
+              {
+                title: "State Legal Guidance",
+                desc: "Get clear instructions on exact stamp paper values, witness requirements, and notarization steps before execution.",
+                icon: Shield,
+              },
+              {
+                title: "Dual Format Download",
+                desc: "Instantly export print-ready PDFs and fully editable Word (.docx) files for complete flexibility.",
+                icon: Download,
+              },
+            ].map((f, i) => (
               <div
                 key={i}
-                className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50"
+                className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/50 hover:border-blue-300 dark:hover:border-blue-600/50 transition-colors"
               >
-                <div className="flex gap-0.5 mb-4">
-                  {Array.from({ length: t.rating }).map((_, j) => (
-                    <Star key={j} size={14} className="text-amber-400 fill-amber-400" />
-                  ))}
+                <div className="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-950/60 flex items-center justify-center text-blue-600 dark:text-blue-400 mb-4">
+                  <f.icon size={20} />
                 </div>
-                <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-5">
-                  &ldquo;{t.text}&rdquo;
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
-                    {t.avatar}
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-slate-900 dark:text-white">{t.name}</p>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">{t.role}</p>
-                  </div>
-                </div>
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{f.title}</h3>
+                <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -498,8 +500,8 @@ export default function HomePage() {
 
         <div className="relative max-w-4xl mx-auto px-4 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 text-white text-sm font-medium mb-6">
-            <Users size={13} />
-            Join 50,000+ users creating documents today
+            <Sparkles size={13} />
+            Fast, Guided & Reliable Document Creation
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
             Ready to Create Your
