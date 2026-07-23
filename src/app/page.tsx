@@ -143,54 +143,55 @@ export default function HomePage() {
   return (
     <div className="overflow-hidden">
       {/* ─── HERO ─── */}
-      <section className="relative min-h-screen flex items-center pt-16 bg-gradient-to-b from-slate-50 via-white to-white dark:from-slate-900 dark:via-slate-900 dark:to-slate-900">
+      <section className="relative pt-20 sm:pt-28 pb-16 sm:pb-24 bg-gradient-to-b from-slate-50 via-white to-white dark:from-slate-950 dark:via-slate-900 dark:to-slate-900">
         {/* Background pattern */}
         <div className="absolute inset-0 bg-grid opacity-60 dark:opacity-100" />
-        <div className="absolute inset-0 bg-radial-primary" />
+        <div className="absolute inset-0 bg-radial-primary pointer-events-none" />
 
-        {/* Floating blobs */}
-        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-blue-400/10 dark:bg-blue-600/10 rounded-full blur-3xl float-animation" />
+        {/* Floating background blur elements */}
+        <div className="hidden sm:block absolute top-1/4 right-1/4 w-64 h-64 bg-blue-400/10 dark:bg-blue-600/10 rounded-full blur-3xl float-animation" />
         <div
-          className="absolute bottom-1/3 left-1/3 w-80 h-80 bg-indigo-400/10 dark:bg-indigo-600/10 rounded-full blur-3xl float-animation"
+          className="hidden sm:block absolute bottom-1/3 left-1/3 w-80 h-80 bg-indigo-400/10 dark:bg-indigo-600/10 rounded-full blur-3xl float-animation"
           style={{ animationDelay: "2s" }}
         />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800/50 text-blue-700 dark:text-blue-300 text-sm font-medium mb-8">
-              <Sparkles size={13} />
-              <span>India&apos;s Trusted Document Creation Platform</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-blue-50/80 dark:bg-blue-950/50 border border-blue-200/80 dark:border-blue-800/50 text-blue-700 dark:text-blue-300 text-xs sm:text-sm font-medium mb-5 sm:mb-8 max-w-full">
+              <Sparkles size={13} className="flex-shrink-0" />
+              <span className="truncate">India&apos;s Guided Document Creation Platform</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse flex-shrink-0" />
             </div>
 
             {/* Headline */}
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 dark:text-white leading-tight tracking-tight mb-6">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 dark:text-white leading-[1.15] tracking-tight mb-4 sm:mb-6">
               Make Official{" "}
               <span className="gradient-text">Documents</span>{" "}
               <br className="hidden sm:block" />
               Simple & Fast
             </h1>
 
-            <p className="text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed mb-10">
+            {/* Sub-headline */}
+            <p className="text-sm sm:text-lg lg:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed mb-6 sm:mb-10 px-1 sm:px-0">
               Answer guided questions. Get professionally formatted, expert-reviewed
               documents in minutes. No lawyers. No templates. No confusion.
             </p>
 
             {/* Search */}
-            <div className="relative max-w-xl mx-auto mb-4">
-              <div className="flex items-center gap-2 bg-white dark:bg-slate-800 rounded-2xl border-2 border-slate-200 dark:border-slate-700 p-2 shadow-lg shadow-slate-200/50 dark:shadow-black/20 focus-within:border-blue-400 dark:focus-within:border-blue-500 transition-colors">
-                <Search className="ml-2 text-slate-400 flex-shrink-0" size={20} />
+            <div className="relative max-w-xl mx-auto mb-3 sm:mb-4 px-1 sm:px-0">
+              <div className="flex items-center gap-1.5 sm:gap-2 bg-white dark:bg-slate-800/90 rounded-xl sm:rounded-2xl border border-slate-200 dark:border-slate-700/80 p-1.5 sm:p-2 shadow-xl shadow-slate-200/40 dark:shadow-black/30 focus-within:border-blue-500 transition-all">
+                <Search className="ml-2 text-slate-400 flex-shrink-0" size={18} />
                 <input
                   type="text"
-                  placeholder="Search for Rent Agreement, NDA, Affidavit..."
+                  placeholder="Search 25+ official documents..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="flex-1 bg-transparent text-slate-800 dark:text-slate-100 placeholder-slate-400 outline-none text-base py-1 px-2"
+                  className="flex-1 min-w-0 bg-transparent text-slate-800 dark:text-slate-100 placeholder-slate-400 outline-none text-xs sm:text-base py-1 px-1 sm:px-2"
                 />
                 <Link
                   href={`/search?q=${searchQuery}`}
-                  className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-sm font-semibold transition-colors flex-shrink-0"
+                  className="px-3.5 sm:px-5 py-2 sm:py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg sm:rounded-xl text-xs sm:text-sm font-semibold transition-colors flex-shrink-0"
                 >
                   Search
                 </Link>
@@ -198,13 +199,13 @@ export default function HomePage() {
             </div>
 
             {/* Quick links */}
-            <p className="text-sm text-slate-400 mb-2">Popular:</p>
-            <div className="flex flex-wrap justify-center gap-2 mb-10">
+            <div className="flex flex-wrap justify-center items-center gap-1.5 sm:gap-2 mb-8 sm:mb-10 px-2 sm:px-0">
+              <span className="text-xs text-slate-400 font-medium mr-1">Popular:</span>
               {["Rent Agreement", "NDA", "Affidavit", "Offer Letter", "Study Gap"].map((doc) => (
                 <Link
                   key={doc}
                   href={`/search?q=${doc}`}
-                  className="px-3 py-1 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-blue-950/40 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200 dark:border-slate-700 transition-colors"
+                  className="px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-medium bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-blue-950/40 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200 dark:border-slate-700/60 transition-colors"
                 >
                   {doc}
                 </Link>
@@ -212,32 +213,32 @@ export default function HomePage() {
             </div>
 
             {/* CTA */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 max-w-xs sm:max-w-none mx-auto">
               <Link
                 href="/categories"
-                className="group inline-flex items-center gap-2.5 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-2xl transition-all duration-300 shadow-lg shadow-blue-600/25 hover:shadow-blue-600/40 hover:-translate-y-0.5"
+                className="group inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 bg-blue-600 hover:bg-blue-700 text-white text-sm sm:text-base font-semibold rounded-xl sm:rounded-2xl transition-all duration-300 shadow-lg shadow-blue-600/25 hover:shadow-blue-600/40 hover:-translate-y-0.5"
               >
                 Browse All Documents
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 href="#how-it-works"
-                className="inline-flex items-center gap-2 px-8 py-4 text-slate-700 dark:text-slate-200 font-semibold rounded-2xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 text-slate-700 dark:text-slate-200 text-sm sm:text-base font-semibold rounded-xl sm:rounded-2xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
               >
                 How It Works
               </Link>
             </div>
 
             {/* Trust signals */}
-            <div className="flex flex-wrap items-center justify-center gap-6 mt-12 pt-8 border-t border-slate-200 dark:border-slate-800">
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mt-10 sm:mt-12 pt-6 sm:pt-8 border-t border-slate-200/80 dark:border-slate-800/80">
               {[
                 { icon: CheckCircle, text: "Expert-reviewed templates" },
                 { icon: Shield, text: "100% secure & private" },
                 { icon: FileCheck, text: "Submission guidance included" },
               ].map(({ icon: Icon, text }) => (
-                <div key={text} className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <Icon size={15} className="text-green-500" />
-                  {text}
+                <div key={text} className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+                  <Icon size={14} className="text-green-500 flex-shrink-0" />
+                  <span>{text}</span>
                 </div>
               ))}
             </div>
