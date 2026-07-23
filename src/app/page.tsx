@@ -113,12 +113,12 @@ function CategoryCard({ cat }: { cat: Category }) {
   return (
     <Link
       href={`/categories/${cat.slug}`}
-      className="group relative p-6 rounded-2xl border border-slate-200 dark:border-slate-700/50 bg-white dark:bg-slate-800/50 hover:border-blue-300 dark:hover:border-blue-600/50 transition-all duration-300 card-glow hover:-translate-y-0.5"
+      className="group relative p-4 sm:p-6 rounded-2xl border border-slate-200 dark:border-slate-700/50 bg-white dark:bg-slate-800/50 hover:border-blue-300 dark:hover:border-blue-600/50 transition-all duration-300 card-glow hover:-translate-y-0.5"
     >
-      <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl ${cat.bgColor} mb-4 text-2xl`}>
+      <div className={`inline-flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-xl ${cat.bgColor} mb-3 sm:mb-4 text-xl sm:text-2xl`}>
         {cat.icon}
       </div>
-      <h3 className="font-semibold text-slate-900 dark:text-white mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+      <h3 className="font-semibold text-slate-900 dark:text-white mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors text-sm sm:text-base">
         {cat.name}
       </h3>
       <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-2 mb-3">
@@ -278,7 +278,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4">
             {categories.map((cat) => (
               <CategoryCard key={cat.id} cat={cat} />
             ))}
