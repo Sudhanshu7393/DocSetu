@@ -32,7 +32,7 @@ export default function ContactPage() {
             </div>
             {[
               { icon: Mail, label: "Email", value: "support@docsetu.in", href: "mailto:support@docsetu.in" },
-              { icon: Phone, label: "Phone", value: "+91 98765 43210", href: "tel:+919876543210" },
+              { icon: Phone, label: "Phone", value: "+91 73930 11350", href: "tel:+917393011350" },
               { icon: MapPin, label: "Address", value: "New Delhi, India 110001", href: "#" },
             ].map(({ icon: Icon, label, value, href }) => (
               <a key={label} href={href} className="flex items-start gap-4 p-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-600/50 transition-colors">

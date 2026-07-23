@@ -122,8 +122,8 @@ export default function HelpPage() {
             <a href="mailto:support@docsetu.in" className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 text-white text-sm font-semibold rounded-xl hover:bg-blue-700 transition-colors">
               <Mail size={15} /> Email Us
             </a>
-            <a href="tel:+919876543210" className="inline-flex items-center gap-2 px-5 py-2.5 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-              <Phone size={15} /> +91 98765 43210
+            <a href="tel:+917393011350" className="inline-flex items-center gap-2 px-5 py-2.5 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+              <Phone size={15} /> +91 73930 11350
             </a>
           </div>
         </div>

@@ -8,10 +8,7 @@ export const metadata: Metadata = {
 };
 
 const team = [
-  { name: "Arjun Mehta", role: "Founder & CEO", initials: "AM", bg: "from-blue-500 to-indigo-600" },
-  { name: "Priya Singh", role: "Head of Legal", initials: "PS", bg: "from-purple-500 to-pink-600" },
-  { name: "Rohan Kumar", role: "CTO", initials: "RK", bg: "from-green-500 to-teal-600" },
-  { name: "Anjali Sharma", role: "Head of Design", initials: "AS", bg: "from-amber-500 to-orange-600" },
+  { name: "Sudhanshu Pandey", role: "Founder & CEO", initials: "SP", bg: "from-blue-600 to-indigo-700" },
 ];
 
 const values = [
@@ -82,20 +79,21 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-20">
-        <div className="text-center mb-12">
-          <span className="text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider">Team</span>
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-white mt-2">The People Behind DocSetu</h2>
+      {/* Leadership */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 text-center">
+        <div className="mb-8">
+          <span className="text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider">Leadership</span>
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-white mt-2">Founder & Leadership</h2>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+        <div className="flex justify-center">
           {team.map((member) => (
-            <div key={member.name} className="text-center">
-              <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${member.bg} flex items-center justify-center text-white font-bold text-lg mx-auto mb-3 shadow-md`}>
+            <div key={member.name} className="text-center p-6 bg-slate-50 dark:bg-slate-800/40 rounded-2xl border border-slate-200 dark:border-slate-700/60 max-w-xs w-full shadow-sm">
+              <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${member.bg} flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4 shadow-md`}>
                 {member.initials}
               </div>
-              <p className="font-semibold text-slate-900 dark:text-white text-sm">{member.name}</p>
-              <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{member.role}</p>
+              <p className="font-bold text-slate-900 dark:text-white text-lg">{member.name}</p>
+              <p className="text-sm text-blue-600 dark:text-blue-400 font-medium mt-1">{member.role}</p>
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-3">Leading DocSetu&apos;s mission to make official document creation simple, guided, and accessible for everyone in India.</p>
             </div>
           ))}
         </div>
