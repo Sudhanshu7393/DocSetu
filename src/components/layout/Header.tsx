@@ -133,10 +133,10 @@ export default function Header() {
                   key={href}
                   href={href}
                   className={cn(
-                    "px-4 py-2 rounded-lg text-sm font-medium transition-colors",
+                    "px-4 py-2 rounded-xl text-sm font-medium transition-all",
                     pathname === href || pathname.startsWith(href + "/")
-                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/30"
-                      : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800"
+                      ? "text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/50 font-semibold shadow-xs"
+                      : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100/80 dark:hover:bg-slate-800/80"
                   )}
                 >
                   {label}
@@ -149,7 +149,7 @@ export default function Header() {
               {/* Search button */}
               <button
                 onClick={() => setSearchOpen(!searchOpen)}
-                className="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                className="p-2 rounded-xl text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
                 aria-label="Search"
               >
                 <Search size={18} />
@@ -162,7 +162,7 @@ export default function Header() {
                   "flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all duration-300 shadow-sm",
                   dark
                     ? "bg-slate-800/90 border-amber-500/40 text-amber-300 hover:bg-slate-800 hover:border-amber-400"
-                    : "bg-blue-50/90 border-blue-200 text-blue-700 hover:bg-blue-100 hover:border-blue-300"
+                    : "bg-indigo-50/90 border-indigo-200 text-indigo-700 hover:bg-indigo-100 hover:border-indigo-300"
                 )}
                 title={dark ? "Switch to Light Theme" : "Switch to Dark Theme"}
                 aria-label="Toggle theme"
@@ -174,7 +174,7 @@ export default function Header() {
                   </>
                 ) : (
                   <>
-                    <Moon size={14} className="text-blue-600 fill-blue-600/20" />
+                    <Moon size={14} className="text-indigo-600 fill-indigo-600/20" />
                     <span className="text-xs font-semibold tracking-wide">Light</span>
                   </>
                 )}
@@ -186,7 +186,7 @@ export default function Header() {
                     onClick={() => setUserOpen(!userOpen)}
                     className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
                   >
-                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-xs font-bold">
+                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center text-white text-xs font-bold">
                       U
                     </div>
                     <ChevronDown size={14} className="text-slate-500" />
@@ -222,7 +222,7 @@ export default function Header() {
                   </Link>
                   <Link
                     href="/register"
-                    className="px-4 py-2 text-sm font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-xl transition-colors shadow-sm hover:shadow-blue-600/25"
+                    className="px-4.5 py-2 text-sm font-semibold bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white rounded-xl transition-all shadow-md shadow-indigo-500/20 hover:shadow-indigo-500/35 hover:-translate-y-0.5"
                   >
                     Get Started Free
                   </Link>
@@ -337,7 +337,7 @@ export default function Header() {
               {/* Mobile Theme Switcher Card */}
               <div className="flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-slate-100/90 dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/80 my-2">
                 <div className="flex items-center gap-2">
-                  {dark ? <Sun size={16} className="text-amber-400" /> : <Moon size={16} className="text-blue-600" />}
+                  {dark ? <Sun size={16} className="text-amber-400" /> : <Moon size={16} className="text-indigo-600" />}
                   <span className="text-xs font-semibold text-slate-700 dark:text-slate-200">
                     {dark ? "Dark Mode Active" : "Light Mode Active"}
                   </span>
@@ -346,7 +346,7 @@ export default function Header() {
                   onClick={toggleDark}
                   className={cn(
                     "px-3 py-1 rounded-full text-xs font-bold transition-all shadow-sm",
-                    dark ? "bg-amber-400 text-slate-900 hover:bg-amber-300" : "bg-blue-600 text-white hover:bg-blue-700"
+                    dark ? "bg-amber-400 text-slate-900 hover:bg-amber-300" : "bg-indigo-600 text-white hover:bg-indigo-700"
                   )}
                 >
                   {dark ? "Light Theme" : "Dark Theme"}
@@ -363,7 +363,7 @@ export default function Header() {
                   </Link>
                   <Link
                     href="/register"
-                    className="flex items-center justify-center px-3 py-3 rounded-xl text-sm font-semibold bg-blue-600 text-white hover:bg-blue-700 transition-colors"
+                    className="flex items-center justify-center px-3 py-3 rounded-xl text-sm font-semibold bg-gradient-to-r from-indigo-600 to-violet-600 text-white hover:from-indigo-700 hover:to-violet-700 transition-all shadow-md"
                   >
                     Get Started Free
                   </Link>

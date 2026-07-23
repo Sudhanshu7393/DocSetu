@@ -51,39 +51,39 @@
 }
 
 :root {
-  --background: #fafcff;
+  --background: #f8fafc;
   --foreground: #0f172a;
   --card: #ffffff;
   --card-foreground: #0f172a;
   --border: #e2e8f0;
   --muted: #f1f5f9;
   --muted-foreground: #64748b;
-  --primary: #1d4ed8;
+  --primary: #4f46e5;
   --primary-foreground: #ffffff;
   --secondary: #f1f5f9;
   --secondary-foreground: #1e293b;
-  --accent: #3b82f6;
+  --accent: #10b981;
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
-  --ring: #2563eb;
+  --ring: #6366f1;
 }
 
 .dark {
-  --background: #0b0f19;
+  --background: #070a13;
   --foreground: #f8fafc;
-  --card: #111827;
+  --card: #0f172a;
   --card-foreground: #f8fafc;
-  --border: #1f293d;
-  --muted: #172033;
+  --border: #1e293b;
+  --muted: #131b2e;
   --muted-foreground: #94a3b8;
-  --primary: #3b82f6;
+  --primary: #6366f1;
   --primary-foreground: #ffffff;
-  --secondary: #172033;
+  --secondary: #131b2e;
   --secondary-foreground: #f8fafc;
-  --accent: #60a5fa;
-  --accent-foreground: #0b0f19;
+  --accent: #34d399;
+  --accent-foreground: #070a13;
   --destructive: #f87171;
-  --ring: #60a5fa;
+  --ring: #818cf8;
 }
 
 * {
@@ -156,14 +156,14 @@ body {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #6366f1 100%);
+  background: linear-gradient(135deg, #4338ca 0%, #6366f1 50%, #0d9488 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .dark .gradient-text {
-  background: linear-gradient(135deg, #60a5fa 0%, #818cf8 50%, #a5b4fc 100%);
+  background: linear-gradient(135deg, #818cf8 0%, #a5b4fc 50%, #34d399 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
