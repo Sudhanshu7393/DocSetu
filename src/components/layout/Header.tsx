@@ -155,13 +155,29 @@ export default function Header() {
                 <Search size={18} />
               </button>
 
-              {/* Dark mode */}
+              {/* High-Impact Theme Switcher */}
               <button
                 onClick={toggleDark}
-                className="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-                aria-label="Toggle dark mode"
+                className={cn(
+                  "flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all duration-300 shadow-sm",
+                  dark
+                    ? "bg-slate-800/90 border-amber-500/40 text-amber-300 hover:bg-slate-800 hover:border-amber-400"
+                    : "bg-blue-50/90 border-blue-200 text-blue-700 hover:bg-blue-100 hover:border-blue-300"
+                )}
+                title={dark ? "Switch to Light Theme" : "Switch to Dark Theme"}
+                aria-label="Toggle theme"
               >
-                {dark ? <Sun size={18} /> : <Moon size={18} />}
+                {dark ? (
+                  <>
+                    <Sun size={14} className="text-amber-400 fill-amber-400/30" />
+                    <span className="text-xs font-semibold tracking-wide">Dark</span>
+                  </>
+                ) : (
+                  <>
+                    <Moon size={14} className="text-blue-600 fill-blue-600/20" />
+                    <span className="text-xs font-semibold tracking-wide">Light</span>
+                  </>
+                )}
               </button>
 
               {isLoggedIn ? (
@@ -318,6 +334,24 @@ export default function Header() {
                   {label}
                 </Link>
               ))}
+              {/* Mobile Theme Switcher Card */}
+              <div className="flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-slate-100/90 dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/80 my-2">
+                <div className="flex items-center gap-2">
+                  {dark ? <Sun size={16} className="text-amber-400" /> : <Moon size={16} className="text-blue-600" />}
+                  <span className="text-xs font-semibold text-slate-700 dark:text-slate-200">
+                    {dark ? "Dark Mode Active" : "Light Mode Active"}
+                  </span>
+                </div>
+                <button
+                  onClick={toggleDark}
+                  className={cn(
+                    "px-3 py-1 rounded-full text-xs font-bold transition-all shadow-sm",
+                    dark ? "bg-amber-400 text-slate-900 hover:bg-amber-300" : "bg-blue-600 text-white hover:bg-blue-700"
+                  )}
+                >
+                  {dark ? "Light Theme" : "Dark Theme"}
+                </button>
+              </div>
               <hr className="my-2 border-slate-100 dark:border-slate-800" />
               {!isLoggedIn && (
                 <>
