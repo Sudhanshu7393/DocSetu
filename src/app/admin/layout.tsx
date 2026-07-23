@@ -13,6 +13,7 @@ import {
   LogOut,
   Bell,
   ChevronRight,
+  Home,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -45,6 +46,17 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               height={40}
               className="h-8 w-auto object-contain rounded-lg bg-white/5 p-1"
             />
+          </Link>
+        </div>
+
+        {/* Back to Website Home button */}
+        <div className="px-3 pt-3 pb-1">
+          <Link
+            href="/"
+            className="flex items-center gap-2 px-3 py-2 rounded-xl bg-blue-600/10 hover:bg-blue-600/20 border border-blue-500/20 text-blue-400 text-xs font-semibold transition-colors"
+          >
+            <Home size={14} />
+            <span>Back to Main Website</span>
           </Link>
         </div>
 

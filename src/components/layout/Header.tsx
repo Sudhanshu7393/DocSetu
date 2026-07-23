@@ -15,6 +15,7 @@ import { documents } from "@/data/documents";
 import { categories } from "@/data/categories";
 
 const navLinks = [
+  { href: "/", label: "Home" },
   { href: "/categories", label: "Documents" },
   { href: "/pricing", label: "Pricing" },
   { href: "/about", label: "About" },
