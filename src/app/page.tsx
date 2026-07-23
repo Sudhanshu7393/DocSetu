@@ -137,6 +137,39 @@ function CategoryCard({ cat }: { cat: Category }) {
   );
 }
 
+function MarqueeTicker() {
+  const marqueeItems = [
+    "📜 Rent Agreements & Lease Deeds",
+    "🔏 Instant Online e-Stamping via SHCIL",
+    "🛡️ General Affidavits & Declarations",
+    "🤝 Non-Disclosure Agreements (NDA)",
+    "💼 Employment Contracts & Offer Letters",
+    "✍️ Step-by-Step Guided Questionnaires",
+    "📄 Study Gap & Domicile Affidavits",
+    "⚡ Instant PDF & Word (.docx) Exports",
+    "🇮🇳 India's Guided Official Document Engine",
+  ];
+
+  return (
+    <div className="py-3.5 bg-slate-900 text-white overflow-hidden border-y border-slate-800 relative select-none shadow-md">
+      <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-slate-900 via-slate-900/90 to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-slate-900 via-slate-900/90 to-transparent z-10 pointer-events-none" />
+
+      <div className="flex whitespace-nowrap animate-marquee">
+        {[...marqueeItems, ...marqueeItems, ...marqueeItems].map((item, i) => (
+          <div
+            key={i}
+            className="flex items-center gap-3 mx-4 sm:mx-6 text-xs sm:text-sm font-semibold tracking-wide text-slate-300 hover:text-white transition-colors"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse flex-shrink-0" />
+            <span>{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function HomePage() {
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -245,6 +278,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ─── MARQUEE TICKER ─── */}
+      <MarqueeTicker />
 
       {/* ─── STATS ─── */}
       <section className="bg-blue-600 dark:bg-blue-700">
